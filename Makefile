@@ -5,7 +5,7 @@ LIBFT_FLAGS = -L libft/ -lft
 CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
 RM		= rm -f
 
-SRC = 	srcs/main.c \
+SRC =	srcs/main.c \
 		srcs/data.c \
 		srcs/sort.c \
 		srcs/utils.c \
