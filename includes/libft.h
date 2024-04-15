@@ -6,7 +6,7 @@
 /*   By: kabasolo <kabasolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:25:05 by kabasolo          #+#    #+#             */
-/*   Updated: 2024/04/10 19:54:13 by kabasolo         ###   ########.fr       */
+/*   Updated: 2024/04/15 11:28:46 by kabasolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,10 @@
 
 typedef struct s_list
 {
-	void		*content;
-	int			index;
+	void			*content;
+	int				index;
 	struct s_list	*next;
 }	t_list;
-
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
