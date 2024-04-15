@@ -2,7 +2,7 @@ NAME = push_swap
 CC = cc
 LIBFT_LIB = libft/
 LIBFT_FLAGS = -L libft/ -lft
-CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror #-g3 -fsanitize=address
 RM		= rm -f
 
 SRC =	srcs/main.c \
