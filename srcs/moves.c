@@ -6,7 +6,7 @@
 /*   By: kabasolo <kabasolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 14:09:47 by kabasolo          #+#    #+#             */
-/*   Updated: 2024/04/11 13:40:16 by kabasolo         ###   ########.fr       */
+/*   Updated: 2024/04/15 10:39:49 by kabasolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,20 @@ void	push(char c, t_list **stack_a, t_list **stack_b)
 {
 	t_list	*node;
 
-	if (c == 'b' && !*stack_a)
+	if ((c == 'b' && !*stack_a) || (c == 'a' && !*stack_b))
 		return ;
-	if (c == 'a' && !*stack_b)
-		return ;
-	node = *stack_a;
-	*stack_a = (*stack_a)->next;
-	ft_lstadd_front(stack_b, node);
+	if (c == 'b')
+	{
+		node = *stack_a;
+		*stack_a = (*stack_a)->next;
+		ft_lstadd_front(stack_b, node);
+	}
+	if (c == 'a')
+	{
+		node = *stack_b;
+		*stack_b = (*stack_b)->next;
+		ft_lstadd_front(stack_a, node);
+	}
 	ft_printf("p%c\n", c);
 }
 

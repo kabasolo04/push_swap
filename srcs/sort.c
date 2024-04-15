@@ -6,7 +6,7 @@
 /*   By: kabasolo <kabasolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 19:37:33 by kabasolo          #+#    #+#             */
-/*   Updated: 2024/04/11 13:40:31 by kabasolo         ###   ########.fr       */
+/*   Updated: 2024/04/15 10:40:33 by kabasolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	hardcode(t_list **stack_a, t_list **stack_b, int num)
 	three_sort(stack_a, num - 3);
 	if (num == 5 && (*stack_b)->index == 1)
 		swap('b', stack_b);
-	return (push('a', stack_b, stack_a), push('a', stack_b, stack_a));
+	return (push('a', stack_a, stack_b), push('a', stack_a, stack_b));
 }
 
 void	radix(t_list **stack_a, t_list **stack_b, int dig)
@@ -79,7 +79,7 @@ void	radix(t_list **stack_a, t_list **stack_b, int dig)
 			push('b', stack_a, stack_b);
 	}
 	while (*stack_b)
-		push('a', stack_b, stack_a);
+		push('a', stack_a, stack_b);
 	radix(stack_a, stack_b, ++dig);
 }
 
@@ -89,5 +89,5 @@ void	radix(t_list **stack_a, t_list **stack_b, int dig)
 5 4 3 ---s---> 4 5 3 --rr---> 3 4 5
 3 5 4 ---s---> 5 3 4 ---r---> 3 4 5
 4 5 3 -------> 4 5 3 --rr---> 3 4 5
-5 3 4 -------> 4 5 3 ---r---> 3 4 5
+5 3 4 -------> 5 3 4 ---r---> 3 4 5
 */
