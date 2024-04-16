@@ -6,7 +6,7 @@
 /*   By: kabasolo <kabasolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 11:44:59 by kabasolo          #+#    #+#             */
-/*   Updated: 2024/04/15 11:25:47 by kabasolo         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:19:52 by kabasolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,16 @@ static int	src_low_num(t_list *stack_a)
 	return (n);
 }
 
-static void	index_to_zero(t_list **stack_a)
+static void	index_to_zero(t_list *stack_a)
 {
-	t_list	*node;
-
-	node = *stack_a;
-	while (node)
+	if (stack_a)
 	{
-		node->index = 0;
-		node = node->next;
+		stack_a->index = 0;
+		index_to_zero(stack_a->next);
 	}
 }
 
-static void	get_index(t_list **stack_a)
+static void	get_index(t_list *stack_a)
 {
 	int		index;
 	int		n;
@@ -46,10 +43,10 @@ static void	get_index(t_list **stack_a)
 
 	index_to_zero(stack_a);
 	index = 1;
-	while (index <= ft_lstsize(*stack_a))
+	while (index <= ft_lstsize(stack_a))
 	{
-		node = *stack_a;
-		n = src_low_num(*stack_a);
+		node = stack_a;
+		n = src_low_num(stack_a);
 		while (node && (int)node->content != n)
 			node = node->next;
 		node->index = index;
@@ -83,12 +80,12 @@ int	get_stack(t_list **stack_a, int argc, char **argv)
 	else
 		mtrx = mtrx_cpy(argv);
 	if (!mtrx)
-		return (ft_printf("Error mallocking\n"), 1);
+		return (1);
 	if (all_num(mtrx))
 	{
 		get_numbers(mtrx, stack_a);
 		if (!num_rep(*stack_a) && all_int(*stack_a))
-			return (get_index(stack_a), 0);
+			return (get_index(*stack_a), mtrx_free(mtrx), 0);
 	}
-	return (ft_printf("Error\n"), mtrx_free(mtrx), 1);
+	return (mtrx_free(mtrx), 1);
 }
