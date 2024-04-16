@@ -6,7 +6,7 @@
 /*   By: kabasolo <kabasolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 18:58:28 by kabasolo          #+#    #+#             */
-/*   Updated: 2024/04/11 13:40:43 by kabasolo         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:15:45 by kabasolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,3 +74,14 @@ int	all_int(t_list *stack)
 	}
 	return (1);
 }
+/*
+void	print_list(t_list *head)
+{
+	ft_printf("Printing list:\n");
+	while (head != NULL)
+	{
+		ft_printf("Index: %d, Content: %d\n", head->index, (int)head->content);
+		head = head->next;
+	}
+}
+*/

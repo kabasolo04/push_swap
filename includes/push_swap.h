@@ -6,7 +6,7 @@
 /*   By: kabasolo <kabasolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 12:00:52 by kabasolo          #+#    #+#             */
-/*   Updated: 2024/04/11 13:28:41 by kabasolo         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:15:58 by kabasolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ int		is_sorted(t_list *list);
 int		all_num(char **mtrx);
 int		num_rep(t_list *stack);
 int		all_int(t_list *stack_a);
+//void  print_list(t_list *head)
 
 #endif //PUSH_SWAP_H

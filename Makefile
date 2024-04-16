@@ -19,17 +19,15 @@ all:	$(NAME)
 		$(CC) -I includes/. $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
-		make -C $(LIBFT_LIB)
-		$(CC) $(CFLAGS) $(OBJS) $(LIBFT_FLAGS) -o $(NAME)
+		@make -C $(LIBFT_LIB)
+		@$(CC) $(CFLAGS) $(OBJS) $(LIBFT_FLAGS) -o $(NAME)
 
 clean:
 		$(RM) */*.o
-		$(RM) $(OBJS)
-		make -C $(LIBFT_LIB) clean
 
 fclean:	clean
 		$(RM) $(NAME)
-		make -C $(LIBFT_LIB) fclean
+		@make -C $(LIBFT_LIB) fclean
 
 re:		fclean all
 
