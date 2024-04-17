@@ -1,15 +1,15 @@
 NAME = push_swap
 CC = cc
-LIBFT_LIB = libft/
-LIBFT_FLAGS = -L libft/ -lft
+LIBFT_LIB = src/libft/
+LIBFT_FLAGS = -L src/libft/ -lft
 CFLAGS = -Wall -Wextra -Werror #-g3 -fsanitize=address
 RM		= rm -f
 
-SRC =	srcs/main.c \
-		srcs/data.c \
-		srcs/sort.c \
-		srcs/utils.c \
-		srcs/moves.c \
+SRC =	src/main.c \
+		src/data.c \
+		src/sort.c \
+		src/utils.c \
+		src/moves.c \
 
 OBJS = $(SRC:%.c=%.o)
 
