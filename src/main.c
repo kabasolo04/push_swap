@@ -6,7 +6,7 @@
 /*   By: kabasolo <kabasolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 16:41:45 by kabasolo          #+#    #+#             */
-/*   Updated: 2024/04/16 12:30:34 by kabasolo         ###   ########.fr       */
+/*   Updated: 2024/04/17 13:36:39 by kabasolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ int	main(int argc, char **argv)
 	else
 		hardcode(&stack_a, &stack_b, ft_lstsize(stack_a));
 	ft_lstclear(&stack_a, dummy);
-	system("leaks push_swap");
+	//system("leaks push_swap");
 	return (0);
 }
